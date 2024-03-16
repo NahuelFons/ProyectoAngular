@@ -1,0 +1,26 @@
+$color-dark: #10232A;
+$color-medium: #3D4D55;
+$color-white: #A79E9C;
+
+/*Estructura*/
+#grid-page{
+    display: grid;
+    grid-template-rows: 15vh 1fr;
+    grid-template-columns: 25% 1fr;
+    height: 100vh;
+}
+.navbar{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    background-color: $color-dark;
+}
+.sidenav{
+    grid-row: 2;
+    grid-column: 1;
+    background-color: $color-medium;
+}
+.content{
+    grid-row: 2;
+    grid-column: 2;
+    background-color: $color-white;
+}
