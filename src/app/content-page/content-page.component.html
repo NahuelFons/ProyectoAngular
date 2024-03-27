@@ -1,1 +1,29 @@
-<p>Contenido principal</p>
+<div class="content-page">
+    <h2 class="content-title">Entregas</h2>
+    <div class="students-container">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Calificación</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students">
+                <td>{{student.apellido}}</td>
+                <td>{{student.nombre}}</td>
+                <td>{{student.entregado ? "Entregado" : "No entregado"}}</td>
+                <td><p [ngClass]="student.aprobado ? 'aprobado' : 'desaprobado'">{{student.aprobado ? "Aprobado" : "Desaprobado"}}</p></td>
+                <td><button (click)="alternarCalificacion(student)" type="button" class="btn btn-dark">Calificar</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="vence-container">
+        <p>Vencimiento: {{entregaLimite | date: "dd/MM/YYYY"}}</p>
+    </div>
+</div>
